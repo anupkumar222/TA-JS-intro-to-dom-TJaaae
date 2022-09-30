@@ -155,6 +155,14 @@ box1.style.fontSize = "0.8rem"
 
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
 
+let boxes = document.querySelectorAll(".box")
+
+boxes.forEach((ele, index) => {
+  if((index + 1) % 2 !== 0) {
+    ele.style.backgroundColor = "aliceblue"
+  }
+})
+
 // add a class named "awesome-box" to the box 6 using classList property of DOM element.
 
 box6.classList.add('awesome-box');
@@ -204,8 +212,9 @@ box9.append(btn);
 
 // Create a img element with src value `https://images.unsplash.com/photo-1592500595497-d1f52a40b207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80` and store in a variable named imgElm
 
-let img = document.createElement("image");
-img.src = "`https://images.unsplash.com/photo-1592500595497-d1f52a40b207?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80`"
+let img = document.createElement("img");
+
+img.src = "https://images.unsplash.com/photo-1664538810221-ad5d29144cd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 
 // Select the box 7 using class seven
 
@@ -213,26 +222,52 @@ let box7 = document.querySelector(".seven");
 
 // Remove all the elements form box seven
 
-let rm2 = document.querySelector("hr");
-rm2.remove()
- rm2 = document.querySelector("hr");
-rm2.remove()
+let rm2 = box7.querySelector("hr");
+rm2.remove();
 
+ rm2 = box7.querySelector("hr");
+rm2.remove();
+
+ rm2 = box7.querySelector("hr");
+rm2.remove();
 
 // Append the imgElm to the box no 7
 
+box7.append(img);
+
 // Change the width and height of the image to `100%`
+
+img.style.width = "100%";
+img.style.height = "100%";
 
 // Select the box 5 using class five
 
 // Create an input element
 
+let input =  document.createElement("input");
+
 // Change the placeholder property of the input element to "Enter you email!"
+
+input.placeholder = "Enter you email!"
 
 // Append the input element to the box 5 you selected above
 
+box5.append(input);
+
 // Create two anchor (a) element with  the text of `AltCampus` and `Google`
+
+let anchor1 = document.createElement("a");
+anchor1.innerText = `AltCampus`
+
+let anchor2 = document.createElement("a");
+anchor2.innerText = `Google`
 
 // Change the href property of the anchor elements to `https://altcampus.school` and `https://google.com`
 
+anchor1.href = `https://altcampus.school`
+anchor2.href = `https://google.com`
+
 // Append both the elements to box 5 you selected above.
+
+
+box5.append(anchor1, anchor2)

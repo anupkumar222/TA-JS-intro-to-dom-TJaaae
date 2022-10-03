@@ -120,6 +120,7 @@
     let ul = document.querySelector("ul");
     let h1 = document.createElement("h1");
     books.forEach((char) => {
+        let figure = document.createElement("figure")
        let li = document.createElement("li");
         let image = document.createElement("img");
         image.src =  char.image;
@@ -129,6 +130,7 @@
         p.innerText = char.author
         let button = document.createElement("button");
         button.innerText = "Buy Now"
-        li.append(image, h2, p, button);
-        ul.append(h1, li);
+        figure.append(image);
+        li.append(figure, h2, p, button);
+        ul.append(li, h1);
     })
